@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
@@ -44,9 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
-
+        
         SpeedControl();
 
         // handle drag
@@ -56,16 +55,12 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
 
         MyInput();
+        
     }
 
-    private void MyInput()
+    private void FixedUpdate()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
-
-        // when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -73,12 +68,15 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-        else
-        {
-            MovePlayer();
-        }
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
 
+    }
+    private void MyInput()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
         
+        MovePlayer();
     }
 
     private void MovePlayer()

@@ -14,24 +14,24 @@ public class CreateLvl1 : MonoBehaviour
         var wallModule3 = transform.GetChild(3);
         var wallModule4 = transform.GetChild(4);
         var ceilingModule = transform.GetChild(5);
-        moduleCreator.CreateFloorCubes(new Vector3(-10, -1, -10), 10, 10, floorModule);
-        moduleCreator.CreateWallCubes(new Vector3(-10, 0, -10), 10, 10, true, wallModule);
-        moduleCreator.CreateWallCubes(new Vector3(-10, 0, -10), 10, 10, false, wallModule2);
-        moduleCreator.CreateWallCubes(new Vector3(-10, 0, 12), 10, 10, true, wallModule3);
-        moduleCreator.CreateWallCubes(new Vector3(12, 0, -10), 10, 10, false, wallModule4);
-        moduleCreator.CreateFloorCubes(new Vector3(-10, 21, -10), 10 , 10, ceilingModule);
+        moduleCreator.CreateFloorCubes(new Vector3(-10, -3.333334f, -10), 3, 3, floorModule);
+        moduleCreator.CreateWallCubes(new Vector3(-10, 0, -10), 3, 3, true, wallModule);
+        moduleCreator.CreateWallCubes(new Vector3(-10, 0, -10), 3, 3, false, wallModule2);
+        moduleCreator.CreateWallCubes(new Vector3(-10, 0, 16.666667f), 3, 3, true, wallModule3);
+        moduleCreator.CreateWallCubes(new Vector3(16.666667f, 0, -10), 3, 3, false, wallModule4);
+        moduleCreator.CreateFloorCubes(new Vector3(-10, 23.333334f, -10), 3, 3, ceilingModule);
         foreach (var modules in floorModule.GetComponentsInChildren<Renderer>())
-            modules.material.color = Color.red;
+            modules.material.color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
         foreach (var modules in wallModule.GetComponentsInChildren<Renderer>())
-            modules.material.color = Color.blue;
+            modules.material.color = new Color(0f / 255f, 155f / 255f, 72f / 255f);
         foreach (var modules in wallModule2.GetComponentsInChildren<Renderer>())
-            modules.material.color = Color.yellow;
+            modules.material.color = new Color(183f / 255f, 18f / 255f, 52f / 255f);
         foreach (var modules in wallModule3.GetComponentsInChildren<Renderer>())
-            modules.material.color = Color.green;
+            modules.material.color = new Color(0f / 255f, 70f / 255f, 173f / 255f);
         foreach (var modules in wallModule4.GetComponentsInChildren<Renderer>())
-            modules.material.color = Color.black;
+            modules.material.color = new Color(255f / 255f, 88f / 255f, 0f / 255f);
         foreach (var modules in ceilingModule.GetComponentsInChildren<Renderer>())
-            modules.material.color = Color.white;
+            modules.material.color = new Color(255f / 255f, 213f / 255f, 0f / 255f);
 
 
 
