@@ -5,6 +5,12 @@ using UnityEngine;
 public class CreateLvl1 : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Material white;
+    public Material green;
+    public Material red;
+    public Material blue;
+    public Material orange;
+    public Material yellow;
     void Start()
     {
         CubeModules moduleCreator = transform.GetComponent<CubeModules>();
@@ -21,17 +27,17 @@ public class CreateLvl1 : MonoBehaviour
         moduleCreator.CreateWallCubes(new Vector3(16.666667f, 0, -10), 3, 3, false, wallModule4);
         moduleCreator.CreateFloorCubes(new Vector3(-10, 23.333334f, -10), 3, 3, ceilingModule);
         foreach (var modules in floorModule.GetComponentsInChildren<Renderer>())
-            modules.material.color = new Color(255f / 255f, 255f / 255f, 255f / 255f);
+            modules.material = white;
         foreach (var modules in wallModule.GetComponentsInChildren<Renderer>())
-            modules.material.color = new Color(0f / 255f, 155f / 255f, 72f / 255f);
+            modules.material = green;
         foreach (var modules in wallModule2.GetComponentsInChildren<Renderer>())
-            modules.material.color = new Color(183f / 255f, 18f / 255f, 52f / 255f);
+            modules.material = red;
         foreach (var modules in wallModule3.GetComponentsInChildren<Renderer>())
-            modules.material.color = new Color(0f / 255f, 70f / 255f, 173f / 255f);
+            modules.material = blue;
         foreach (var modules in wallModule4.GetComponentsInChildren<Renderer>())
-            modules.material.color = new Color(255f / 255f, 88f / 255f, 0f / 255f);
+            modules.material = orange;
         foreach (var modules in ceilingModule.GetComponentsInChildren<Renderer>())
-            modules.material.color = new Color(255f / 255f, 213f / 255f, 0f / 255f);
+            modules.material = yellow;
 
 
 
