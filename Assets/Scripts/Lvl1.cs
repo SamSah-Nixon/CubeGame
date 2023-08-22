@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Lvl1 : MonoBehaviour
 {
+    public AudioScript audioScript;
     void Start()
     {
 
@@ -20,6 +22,15 @@ public class Lvl1 : MonoBehaviour
         return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0, 1f));
     }
 
+    public void CubeFlashAnim()
+    {
+        Invoke(nameof(CubeFlash),0.0f);
+        Invoke(nameof(CubeFlash),0.4f);
+        Invoke(nameof(CubeFlash),0.8f);
+        Invoke(nameof(ResetColors), 1.2f);
+    }
+
+
     void CubeFlash()
     {
         foreach (Transform moduleType in transform )
@@ -27,6 +38,7 @@ public class Lvl1 : MonoBehaviour
             foreach (Transform module in moduleType.transform)
             {
                 module.GetComponent<Renderer>().material.color = GenerateRandomColor();
+                audioScript.playFlashSFX();
             }
         }
     }
@@ -38,6 +50,7 @@ public class Lvl1 : MonoBehaviour
             foreach (Transform module in moduleType.transform)
             {
                 module.GetComponent<Renderer>().material.color = module.GetComponent<ModuleScript>().GetDefaultColor();
+                audioScript.playStartSFX();
             }
         }
     }
