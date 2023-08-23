@@ -5,6 +5,7 @@ using UnityEngine;
 public class CubeModules : MonoBehaviour
 {
     public GameObject cubePrefab;
+    public Material glowMaterial;
     public float cubeSize = 1f;
 
 
@@ -47,6 +48,11 @@ public class CubeModules : MonoBehaviour
            }
         }
         return wallCubes;
+    }
+
+    public Material getGlowMat()
+    {
+        return glowMaterial;
     }
 
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ModuleScript : MonoBehaviour
 {
 
-    private bool colliding = false;
+
 
     private Rigidbody rb;
     private Color defaultColor;
@@ -24,19 +25,28 @@ public class ModuleScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.tag.Equals("Module"))
+
+        if (collision.gameObject.tag.Equals("Ball"))
         {
-            colliding = true;
+            Debug.Log("AUKHDIUAWHDOAUH");
+            HitByBall();
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
 
-        if (!collision.gameObject.tag.Equals("Module"))
-        {
-            colliding = false;
-        }
+    }
+
+    void HitByBall()
+    {
+        GetComponent<Renderer>().material = transform.parent.parent.GetComponent<CubeModules>().getGlowMat();
+        GetComponent<Renderer>().material.color = defaultColor;
+        Invoke("Reset Glow", 1f);
+    }
+
+    void ResetGlow()
+    {
 
     }
 
