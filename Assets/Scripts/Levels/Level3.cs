@@ -15,7 +15,7 @@ public class Level3 : MonoBehaviour
             foreach (Transform module in moduleType.transform)
             {
                 //Ternary
-                module.GetComponent<ModuleScript>().health = Random.Range(0, 100) > 75 ? 3 : 1;
+                module.GetComponent<ModuleScript>().health = Random.Range(0, 100) > 75 ? 4 : 1;
                 module.GetComponent<ModuleScript>().UpdateMaterial();
                 modules.Add(module.GetComponent<ModuleScript>());
             }

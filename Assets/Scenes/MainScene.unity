@@ -6532,6 +6532,7 @@ MonoBehaviour:
   audioScript: {fileID: 2000028763}
   currentLevel: 0
   armor1Material: {fileID: 2100000, guid: ff5ae083fd2c17349a9e59b79edd4abc, type: 2}
+  armor2Material: {fileID: 2100000, guid: 87d40880da15ecc47b3e43ed07ef0adb, type: 2}
   walls: {fileID: 969419430}
 --- !u!114 &1306745196
 MonoBehaviour:

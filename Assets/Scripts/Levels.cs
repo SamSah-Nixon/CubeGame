@@ -9,6 +9,7 @@ public class Levels : MonoBehaviour
     public AudioScript audioScript;
     public int currentLevel = 0;
     public Material armor1Material;
+    public Material armor2Material;
     public GameObject walls;
     void Start()
     {

@@ -70,7 +70,11 @@ public class ModuleScript : MonoBehaviour
 
     public void UpdateMaterial()
     {
-        if (health >= 2)
+        if (health >= 6)
+        {
+            rend.material = transform.parent.parent.GetComponent<Levels>().armor2Material;
+        }
+        else if (health >= 2)
         {
             rend.material = transform.parent.parent.GetComponent<Levels>().armor1Material;
         }
