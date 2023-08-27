@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class Levels : MonoBehaviour
 {
+    public DeathScreen deathScreen;
     public AudioScript audioScript;
     public int currentLevel = 0;
     public Material armor1Material;
@@ -233,5 +234,11 @@ public class Levels : MonoBehaviour
                 GetComponent<Level25>().enabled = true;
                 break;
         }
+    }
+
+    public void Death(string message)
+    {
+        UnLoadLevel();
+        deathScreen.Death(message);
     }
 }

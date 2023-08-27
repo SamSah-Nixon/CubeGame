@@ -53,7 +53,7 @@ public class Level5 : MonoBehaviour
             bottomModules.transform.position = Vector3.Lerp(targetPosition, startPosition, elapsedtime/1f);
         if (bottomModules.transform.position == targetPosition)
         {
-            //TDOD: Death
+            GetComponent<Levels>().deathScreen.Death("CRUSHED!");
             Debug.Log("You died");
         }
     }
