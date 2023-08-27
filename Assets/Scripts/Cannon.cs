@@ -5,6 +5,8 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public GameObject cannonBall;
+    public float fireRate = 0.25f;
+    private float lastfiretime = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,7 @@ public class Cannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && lastfiretime + fireRate < Time.time)
         {
             Fire();
         }
@@ -22,6 +24,7 @@ public class Cannon : MonoBehaviour
 
     void Fire()
     {
+        lastfiretime = Time.time;
         //Creates a new ball
         GameObject ball = Instantiate(cannonBall, transform.position, transform.rotation);
         //Adds force to the ball
