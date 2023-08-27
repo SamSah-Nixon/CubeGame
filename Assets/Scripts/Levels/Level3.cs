@@ -5,14 +5,40 @@ using UnityEngine;
 public class Level3 : MonoBehaviour
 {
     // Start is called before the first frame update
+    private List<ModuleScript> modules = new List<ModuleScript>();
+
     void Start()
     {
-        
+        Debug.Log("Level 3: Walls");
+        foreach (Transform moduleType in transform)
+        {
+            foreach (Transform module in moduleType.transform)
+            {
+                //Ternary
+                module.GetComponent<ModuleScript>().health = Random.Range(0, 100) > 75 ? 3 : 1;
+                module.GetComponent<ModuleScript>().UpdateMaterial();
+                modules.Add(module.GetComponent<ModuleScript>());
+            }
+        }
+        GetComponent<Levels>().walls.transform.GetChild(Random.Range(0,8)).gameObject.SetActive(true);
+        GetComponent<Levels>().walls.transform.GetChild(Random.Range(0,8)).gameObject.SetActive(true);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (modules.TrueForAll(module => module.isLit))
+        {
+            foreach (var module in modules)
+            {
+                module.LightDown();
+            }
+
+            for(int i = 0; i < GetComponent<Levels>().walls.transform.childCount; i++)
+            {
+                GetComponent<Levels>().walls.transform.GetChild(i).gameObject.SetActive(false);
+            }
+            GetComponent<Levels>().LoadNextLevel();
+        }
     }
 }
