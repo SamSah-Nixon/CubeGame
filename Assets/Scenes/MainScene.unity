@@ -173,6 +173,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &21436111
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -294,6 +295,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &69982569
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -521,6 +523,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &105097877
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -813,6 +816,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &198704523
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -934,6 +938,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &203019022
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1055,6 +1060,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &205119059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1176,6 +1182,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &208867260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1297,6 +1304,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &226909628
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1418,6 +1426,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &234617908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1700,6 +1709,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &309107662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1861,6 +1871,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &343783561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1982,6 +1993,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &354145229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2103,6 +2115,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &427731496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2224,6 +2237,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &465780761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2548,6 +2562,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &577128982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2775,6 +2790,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &644030390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2936,6 +2952,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &682018043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3237,6 +3254,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &718221128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3358,6 +3376,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &740430500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3479,6 +3498,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &744934710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3734,6 +3754,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &870804741
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3855,6 +3876,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &893095591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4016,6 +4038,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &909594116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4137,6 +4160,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &911278185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4258,6 +4282,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &921476082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4379,6 +4404,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &944868732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4537,6 +4563,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1001233282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4658,6 +4685,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1024765210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4885,6 +4913,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1086915213
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5006,6 +5035,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1106376296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5127,6 +5157,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1111150228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5248,6 +5279,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1123054109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5409,6 +5441,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1181270886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5530,6 +5563,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1206022361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5682,6 +5716,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1218834735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5803,6 +5838,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1235455813
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5886,6 +5922,7 @@ GameObject:
   - component: {fileID: 1306745196}
   - component: {fileID: 1306745195}
   - component: {fileID: 1306745198}
+  - component: {fileID: 1306745199}
   m_Layer: 0
   m_Name: CubeModules
   m_TagString: Untagged
@@ -5907,6 +5944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioScript: {fileID: 2000028763}
   currentLevel: 0
+  armor1Material: {fileID: 2100000, guid: ff5ae083fd2c17349a9e59b79edd4abc, type: 2}
 --- !u!114 &1306745196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5953,6 +5991,18 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11a813df5f49f6f4fb5ef8d66cec0cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1306745199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306745194}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d884a377424a7a04e9cfb5465789b49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1315912145
@@ -6005,6 +6055,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1315912148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6126,6 +6177,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1323220912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6247,6 +6299,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1338309496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6368,6 +6421,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1346387082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6583,6 +6637,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1351441489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6769,6 +6824,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1496770594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7143,6 +7199,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1640526686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7264,6 +7321,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1695982454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7385,6 +7443,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.34901962, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1740252402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7506,6 +7565,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1752337818
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7627,6 +7687,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1781551158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7748,6 +7809,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1813559833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7869,6 +7931,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1833115660
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8021,6 +8084,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1924190082
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8142,6 +8206,7 @@ MonoBehaviour:
   defaultColor: {r: 0.7254902, g: 0, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &1950836146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8609,6 +8674,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.27058825, b: 0.6784314, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &2060984192
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8730,6 +8796,7 @@ MonoBehaviour:
   defaultColor: {r: 0, g: 0.60784316, b: 0.28235295, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &2104223688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8851,6 +8918,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 0.8352941, b: 0, a: 1}
   isColliding: 0
   isLit: 0
+  health: 1
 --- !u!65 &2122043505
 BoxCollider:
   m_ObjectHideFlags: 0

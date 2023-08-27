@@ -8,7 +8,6 @@ public class CubeModules : MonoBehaviour
     public Material glowMaterial;
     public float cubeSize = 1f;
 
-
     public ArrayList CreateFloorCubes(Vector3 startCorner, int length, int width, Transform parentGameObject)
     {
         ArrayList floorCubes = new ArrayList();

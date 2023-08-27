@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ModuleScript : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class ModuleScript : MonoBehaviour
     private Renderer rend;
     private Material defaultMat;
     public Color defaultColor;
+    [HideInInspector]
     public bool isColliding = false;
     public bool isLit = false;
+    public int health = -1;
+
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,7 @@ public class ModuleScript : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.material.color = defaultColor;
         defaultMat = rend.material;
+        health = -1;
     }
 
     // Update is called once per frame
@@ -32,7 +37,10 @@ public class ModuleScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(health);
         isColliding = true;
+        health--;
+        UpdateMaterial();
     }
 
     private void OnCollisionExit(Collision collision)
@@ -60,5 +68,20 @@ public class ModuleScript : MonoBehaviour
         return defaultColor;
     }
 
+    public void UpdateMaterial()
+    {
+        if (health >= 2)
+        {
+            rend.material = transform.parent.parent.GetComponent<Levels>().armor1Material;
+        }
+        else if (health == 1)
+        {
+            LightDown();
+        }
+        else if (health == 0)
+        {
+            LightUp();
+        }
+    }
 
 }

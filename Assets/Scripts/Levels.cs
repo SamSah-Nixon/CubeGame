@@ -8,7 +8,7 @@ public class Levels : MonoBehaviour
 {
     public AudioScript audioScript;
     public int currentLevel = 0;
-
+    public Material armor1Material;
     void Start()
     {
 
@@ -75,7 +75,7 @@ public class Levels : MonoBehaviour
                 GetComponent<Level1>().enabled = false;
                 break;
             case 2:
-                //GetComponent<Level2>().enabled = false;
+                GetComponent<Level2>().enabled = false;
                 break;
         }
     }
@@ -90,7 +90,7 @@ public class Levels : MonoBehaviour
                 GetComponent<Level1>().enabled = true;
                 break;
             case 2:
-                //GetComponent<Level2>().enabled = true;
+                GetComponent<Level2>().enabled = true;
                 break;
         }
     }
