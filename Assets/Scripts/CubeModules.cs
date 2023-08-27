@@ -45,12 +45,12 @@ public class CubeModules : MonoBehaviour
                                                     startCorner.z + zOffset * cubeSize * x - xOffset * cubeSize / 2 + zOffset * cubeSize / 2);
                 cube.transform.rotation = Quaternion.Euler(0, 90, 0);
                 wallCubes.Add(cube);
-           }
+            }
         }
         return wallCubes;
     }
 
-    public Material getGlowMat()
+    public Material GetGlowMat()
     {
         return glowMaterial;
     }

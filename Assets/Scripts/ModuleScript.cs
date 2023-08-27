@@ -9,12 +9,19 @@ public class ModuleScript : MonoBehaviour
 
 
     private Rigidbody rb;
-    private Color defaultColor;
+    private Renderer rend;
+    private Material defaultMat;
+    public Color defaultColor;
+    public bool isColliding = false;
+    public bool isLit = false;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        defaultColor = GetComponent<Renderer>().material.color;
+        rend = GetComponent<Renderer>();
+        rend.material.color = defaultColor;
+        defaultMat = rend.material;
     }
 
     // Update is called once per frame
@@ -25,29 +32,27 @@ public class ModuleScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag.Equals("Ball"))
-        {
-            Debug.Log("AUKHDIUAWHDOAUH");
-            HitByBall();
-        }
+        isColliding = true;
     }
 
     private void OnCollisionExit(Collision collision)
     {
-
+        isColliding = false;
     }
 
-    void HitByBall()
+
+    public void LightUp()
     {
-        GetComponent<Renderer>().material = transform.parent.parent.GetComponent<CubeModules>().getGlowMat();
-        GetComponent<Renderer>().material.color = defaultColor;
-        Invoke("Reset Glow", 1f);
+        rend.material = transform.parent.parent.GetComponent<CubeModules>().GetGlowMat();
+        rend.material.SetColor("_EmissionColor", defaultColor * 5);
+        rend.material.color = defaultColor;
+        isLit = true;
     }
 
-    void ResetGlow()
+    public void LightDown()
     {
-
+        rend.material = defaultMat;
+        isLit = false;
     }
 
     public Color GetDefaultColor()

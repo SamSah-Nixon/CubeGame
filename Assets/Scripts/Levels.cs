@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
-public class Lvl1 : MonoBehaviour
+public class Levels : MonoBehaviour
 {
     public AudioScript audioScript;
+    public int currentLevel = 0;
+
     void Start()
     {
 
@@ -38,9 +41,10 @@ public class Lvl1 : MonoBehaviour
             foreach (Transform module in moduleType.transform)
             {
                 module.GetComponent<Renderer>().material.color = GenerateRandomColor();
-                audioScript.playFlashSFX();
+                
             }
         }
+        audioScript.playFlashSFX();
     }
 
     void ResetColors()
@@ -50,8 +54,44 @@ public class Lvl1 : MonoBehaviour
             foreach (Transform module in moduleType.transform)
             {
                 module.GetComponent<Renderer>().material.color = module.GetComponent<ModuleScript>().GetDefaultColor();
-                audioScript.playStartSFX();
             }
+        }
+        audioScript.playStartSFX();
+    }
+
+    public void LoadNextLevel()
+    {
+        UnLoadLevel();
+        currentLevel++;
+        CubeFlashAnim();
+        Invoke("LoadLevel",1.2f);
+    }
+
+    public void UnLoadLevel()
+    {
+        switch (currentLevel)
+        {
+            case 1:
+                GetComponent<Level1>().enabled = false;
+                break;
+            case 2:
+                //GetComponent<Level2>().enabled = false;
+                break;
+        }
+    }
+    public void LoadLevel()
+    {
+        
+        Debug.Log("Displaying level " + currentLevel);
+        
+        switch (currentLevel)
+        {
+            case 1:
+                GetComponent<Level1>().enabled = true;
+                break;
+            case 2:
+                //GetComponent<Level2>().enabled = true;
+                break;
         }
     }
 }
