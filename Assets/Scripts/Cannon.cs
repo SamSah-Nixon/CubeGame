@@ -26,7 +26,7 @@ public class Cannon : MonoBehaviour
         GameObject ball = Instantiate(cannonBall, transform.position, transform.rotation);
         //Adds force to the ball
         ball.GetComponent<Renderer>().material.color = RandomColor();
-        ball.GetComponent<Rigidbody>().AddForce(transform.up * 1000);
+        ball.GetComponent<Rigidbody>().AddForce(transform.up * 2000);
         //Destroys the ball after 5 seconds
         Destroy(ball, 5);
 
