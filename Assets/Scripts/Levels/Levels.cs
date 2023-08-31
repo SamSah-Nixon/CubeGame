@@ -14,6 +14,9 @@ public class Levels : MonoBehaviour
     public GameObject walls;
     public GameObject crushers;
 
+    public void Start()  {
+        setStartAndEndSpotsCrusher();
+    }
     Color GenerateRandomColor()
     {
         return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0, 1f));
@@ -253,5 +256,20 @@ public class Levels : MonoBehaviour
         Invoke(nameof(DisableDangerSign),0.6f);
         Invoke(nameof(EnableDangerSign),0.8f);
         Invoke(nameof(DisableDangerSign),1.0f);
+    }
+
+    public void setStartAndEndSpotsCrusher()
+    {
+        foreach (Transform topCrusher in crushers.transform.GetChild(1))
+        {
+            topCrusher.GetComponent<Crusher>().startPos = new Vector3(topCrusher.transform.position.x, 43.66666f, topCrusher.transform.position.z);
+            topCrusher.GetComponent<Crusher>().endPos = new Vector3(topCrusher.transform.position.x, 6.66666f, topCrusher.transform.position.z);
+        }
+
+        foreach (Transform bottomCrusher in crushers.transform.GetChild(2))
+        {
+            bottomCrusher.GetComponent<Crusher>().startPos = new Vector3(bottomCrusher.transform.position.x, -23.33333f, bottomCrusher.transform.position.z);
+            bottomCrusher.GetComponent<Crusher>().endPos = new Vector3(bottomCrusher.transform.position.x, 10f, bottomCrusher.transform.position.z);
+        }
     }
 }

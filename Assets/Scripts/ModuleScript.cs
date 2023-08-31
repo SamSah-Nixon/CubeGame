@@ -29,15 +29,8 @@ public class ModuleScript : MonoBehaviour
         health = -1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(health);
         isColliding = true;
         health--;
         UpdateMaterial();

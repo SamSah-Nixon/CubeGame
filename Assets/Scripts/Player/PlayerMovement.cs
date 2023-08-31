@@ -3,7 +3,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
+    float moveSpeed;
 
     public float groundDrag;
 
@@ -15,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
 
     [Header("Ground Check")]
@@ -31,8 +34,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
-
-    [Header("World")] public GameObject canvas;
 
     private void Start()
     {
@@ -75,7 +76,12 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        
+
+        if (Input.GetKey(sprintKey))
+            moveSpeed = sprintSpeed;
+        else
+            moveSpeed = walkSpeed;
+
         MovePlayer();
     }
 
@@ -121,11 +127,4 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("KillBox"))
-        {
-            canvas.GetComponent<DeathScreen>().Death(collision.gameObject.name);
-        }
-    }
 }
