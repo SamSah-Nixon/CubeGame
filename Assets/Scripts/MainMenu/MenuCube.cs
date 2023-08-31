@@ -30,6 +30,6 @@ public class MenuCube : MonoBehaviour
         y += Random.Range(-5f, 5f);
         z += Random.Range(-5f, 5f);
         //Cube rotates randomly slowly and smoothly
-        transform.Rotate(new Vector3(x,y,z), 0.5f);
+        transform.Rotate(new Vector3(x,y,z), 100f * Time.deltaTime);
     }
 }

@@ -31,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
-    
-   
+
+    [Header("World")] public GameObject canvas;
 
     private void Start()
     {
@@ -119,5 +119,13 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("KillBox"))
+        {
+            canvas.GetComponent<DeathScreen>().Death(collision.gameObject.name);
+        }
     }
 }

@@ -7,6 +7,7 @@ public class AudioScript : MonoBehaviour
     // Start is called before the first frame update
     public AudioSource flashSFX;
     public AudioSource startSFX;
+    public AudioSource warningSFX;
     void Start()
     {
         
@@ -26,5 +27,18 @@ public class AudioScript : MonoBehaviour
     public void playStartSFX()
     {
         startSFX.Play();
+    }
+
+    public void playWarningSFX()
+    {
+        warningSFX.Play();
+    }
+
+    //Stop playing all audio
+    public void stopAllSFX()
+    {
+        flashSFX.Stop();
+        startSFX.Stop();
+        warningSFX.Stop();
     }
 }

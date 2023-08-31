@@ -13,7 +13,7 @@ public class Level5 : MonoBehaviour
     private Vector3 targetPosition = new Vector3(0, 18.6666f, 0);
     void Start()
     {
-        Debug.Log("Level 4: Armor+");
+        Debug.Log("Level 5: Timed Crusher");
         foreach (Transform moduleType in transform)
         {
             foreach (Transform module in moduleType.transform)

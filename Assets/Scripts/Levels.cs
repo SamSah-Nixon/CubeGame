@@ -12,16 +12,7 @@ public class Levels : MonoBehaviour
     public Material armor1Material;
     public Material armor2Material;
     public GameObject walls;
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
+    public GameObject crushers;
 
     Color GenerateRandomColor()
     {
@@ -240,5 +231,27 @@ public class Levels : MonoBehaviour
     {
         UnLoadLevel();
         deathScreen.Death(message);
+    }
+
+    public void EnableDangerSign()
+    {
+        audioScript.playWarningSFX();
+        crushers.transform.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void DisableDangerSign()
+    {
+        audioScript.stopAllSFX();
+        crushers.transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    public void WarningSign()
+    {
+        Invoke(nameof(EnableDangerSign),0.0f);
+        Invoke(nameof(DisableDangerSign),0.2f);
+        Invoke(nameof(EnableDangerSign),0.4f);
+        Invoke(nameof(DisableDangerSign),0.6f);
+        Invoke(nameof(EnableDangerSign),0.8f);
+        Invoke(nameof(DisableDangerSign),1.0f);
     }
 }
