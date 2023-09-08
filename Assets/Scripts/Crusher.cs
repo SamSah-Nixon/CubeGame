@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Crusher : MonoBehaviour
@@ -62,12 +61,4 @@ public class Crusher : MonoBehaviour
         return false;
     }
 
-    public void OnCollisionEnter(Collision collision)
-    {
-        //If colliding with player
-        if (collision.transform.tag.Equals("Player") && behavior.Equals("crushDown"))
-        {
-            transform.parent.parent.GetComponent<CrusherLevelRef>().cubeModules.GetComponent<Levels>().deathScreen.Death("CRUSHED!");
-        }
-    }
 }
