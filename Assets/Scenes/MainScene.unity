@@ -3973,7 +3973,7 @@ GameObject:
   - component: {fileID: 706060479}
   - component: {fileID: 706060480}
   - component: {fileID: 706060481}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6056,7 +6056,7 @@ GameObject:
   - component: {fileID: 996370609}
   - component: {fileID: 996370608}
   - component: {fileID: 996370611}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CrushHitbox
   m_TagString: InnerBody
   m_Icon: {fileID: 0}
@@ -7610,7 +7610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1213323182}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CameraPosition
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -10195,7 +10195,7 @@ GameObject:
   - component: {fileID: 1546505632}
   - component: {fileID: 1546505634}
   - component: {fileID: 1546505633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerObj
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -11877,7 +11877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1854549249}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Orientation
   m_TagString: Player
   m_Icon: {fileID: 0}

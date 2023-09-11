@@ -8,7 +8,7 @@ public class CrushHitbox : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("CRUSHAUDQWHD!");
-            //if (other.gameObject.tag != "Player")
-            //deathCanvas.GetComponent<DeathScreen>().Death("CRUSHED!");
+            if (other.gameObject.tag != "Player")
+                deathCanvas.GetComponent<DeathScreen>().Death("CRUSHED!");
     }
 }
