@@ -9,7 +9,7 @@ public class Crusher : MonoBehaviour
     private float timeDown = 0.5f;
     public Vector3 startPos;
     public Vector3 endPos;
-
+    private Rigidbody rb;
 
     // Update is called once per frame
     void Update()
@@ -25,13 +25,13 @@ public class Crusher : MonoBehaviour
             }
             //Going down
             else if (behavior.Equals("crushDown"))
-                transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / this.timeDown);
+                rb.AddForce(Vector3.MoveTowards(startPos, endPos, elapsedTime / this.timeDown));
             //Stop
             else if (behavior.Equals("crushUp") && floatEquals(transform.position.y, startPos.y))
                 behavior = "still";
             //Going up
             else if (behavior.Equals("crushUp"))
-                transform.position = Vector3.Lerp(endPos, startPos, elapsedTime / this.timeDown/4);
+                rb.AddForce(Vector3.MoveTowards(endPos, startPos, elapsedTime / this.timeDown/4));
         }
     }
 
