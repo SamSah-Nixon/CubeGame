@@ -58,7 +58,7 @@ public class Level6 : MonoBehaviour
         if (Time.time > lastActive + cooldown)
         {
             lastActive = Time.time;
-            GetComponent<Levels>().crushers.transform.GetChild(1).GetChild(Random.Range(0,8)).gameObject.GetComponent<Crusher>().Crush(timeDown);
+            GetComponent<Levels>().getCrushers().transform.GetChild(1).GetChild(Random.Range(0,8)).gameObject.GetComponent<Crusher>().Crush(timeDown);
         }
     }
 }

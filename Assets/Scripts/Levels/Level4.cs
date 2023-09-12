@@ -34,8 +34,8 @@ public class Level4 : MonoBehaviour
                 modules.Add(module.GetComponent<ModuleScript>());
             }
         }
-        GetComponent<Levels>().walls.transform.GetChild(Random.Range(0, 8)).gameObject.SetActive(true);
-        GetComponent<Levels>().walls.transform.GetChild(Random.Range(0, 8)).gameObject.SetActive(true);
+        GetComponent<Levels>().getWalls().transform.GetChild(Random.Range(0, 8)).gameObject.SetActive(true);
+        GetComponent<Levels>().getWalls().transform.GetChild(Random.Range(0, 8)).gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -48,9 +48,9 @@ public class Level4 : MonoBehaviour
                 module.LightDown();
             }
 
-            for (int i = 0; i < GetComponent<Levels>().walls.transform.childCount; i++)
+            for (int i = 0; i < GetComponent<Levels>().getWalls().transform.childCount; i++)
             {
-                GetComponent<Levels>().walls.transform.GetChild(i).gameObject.SetActive(false);
+                GetComponent<Levels>().getWalls().transform.GetChild(i).gameObject.SetActive(false);
             }
             GetComponent<Levels>().LoadNextLevel();
         }

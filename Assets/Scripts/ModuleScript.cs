@@ -65,11 +65,11 @@ public class ModuleScript : MonoBehaviour
     {
         if (health >= 5)
         {
-            rend.material = transform.parent.parent.GetComponent<Levels>().armor2Material;
+            rend.material = transform.parent.parent.GetComponent<Levels>().getArmor2Material();
         }
         else if (health >= 2)
         {
-            rend.material = transform.parent.parent.GetComponent<Levels>().armor1Material;
+            rend.material = transform.parent.parent.GetComponent<Levels>().getArmor1Material();
         }
         else if (health == 1)
         {

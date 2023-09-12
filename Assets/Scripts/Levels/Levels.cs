@@ -6,14 +6,15 @@ using UnityEngine.Events;
 
 public class Levels : MonoBehaviour
 {
-    public DeathScreen deathScreen;
-    public AudioScript audioScript;
-    public int currentLevel = 0;
-    public Material armor1Material;
-    public Material armor2Material;
-    public GameObject walls;
-    public GameObject crushers;
-
+    [SerializeField] private DeathScreen deathScreen;
+    [SerializeField] private AudioScript audioScript;
+    [SerializeField] private int currentLevel = 0;
+    [SerializeField] private Material armor1Material;
+    [SerializeField] private Material armor2Material;
+    [SerializeField] private GameObject walls;
+    [SerializeField] private GameObject crushers;
+    [SerializeField] private GameObject warningSignPrefab;
+    private List<GameObject> warningSigns = new List<GameObject>();
     public void Start()  {
         setStartAndEndSpotsCrusher();
     }
@@ -149,8 +150,8 @@ public class Levels : MonoBehaviour
     {
         
         Debug.Log("Displaying level " + currentLevel);
-        
-        switch (currentLevel)
+
+      switch (currentLevel)
         {
             case 1:
                 GetComponent<Level1>().enabled = true;
@@ -239,37 +240,79 @@ public class Levels : MonoBehaviour
     public void EnableDangerSign()
     {
         audioScript.playWarningSFX();
-        crushers.transform.GetChild(0).gameObject.SetActive(true);
+        foreach (GameObject warningSign in warningSigns)
+        {
+            warningSign.SetActive(true);
+        }
     }
 
     public void DisableDangerSign()
     {
         audioScript.stopAllSFX();
-        crushers.transform.GetChild(0).gameObject.SetActive(false);
+        foreach (GameObject warningSign in warningSigns)
+        {
+            warningSign.SetActive(false);
+        }
     }
 
-    public void WarningSign()
+    public void WarningSign(float x, float z)
     {
+        GameObject warningSign = Instantiate(warningSignPrefab, new Vector3(x, 1f, z), Quaternion.identity);
+        warningSigns.Add(warningSign);
         Invoke(nameof(EnableDangerSign),0.0f);
         Invoke(nameof(DisableDangerSign),0.2f);
         Invoke(nameof(EnableDangerSign),0.4f);
         Invoke(nameof(DisableDangerSign),0.6f);
         Invoke(nameof(EnableDangerSign),0.8f);
         Invoke(nameof(DisableDangerSign),1.0f);
+        Invoke(nameof(EnableDangerSign),1.2f);
+        Invoke(nameof(DestroySign),1.4f);
+    }
+
+    private void DestroySign()
+    {
+        GameObject sign = warningSigns[0];
+        warningSigns.RemoveAt(0);
+        Destroy(sign);
     }
 
     public void setStartAndEndSpotsCrusher()
     {
-        foreach (Transform topCrusher in crushers.transform.GetChild(1))
+        foreach (Transform topCrusher in crushers.transform.GetChild(0))
         {
             topCrusher.GetComponent<Crusher>().startPos = new Vector3(topCrusher.transform.position.x, 43.66666f, topCrusher.transform.position.z);
             topCrusher.GetComponent<Crusher>().endPos = new Vector3(topCrusher.transform.position.x, 6.66666f, topCrusher.transform.position.z);
         }
 
-        foreach (Transform bottomCrusher in crushers.transform.GetChild(2))
+        foreach (Transform bottomCrusher in crushers.transform.GetChild(1))
         {
             bottomCrusher.GetComponent<Crusher>().startPos = new Vector3(bottomCrusher.transform.position.x, -23.33333f, bottomCrusher.transform.position.z);
             bottomCrusher.GetComponent<Crusher>().endPos = new Vector3(bottomCrusher.transform.position.x, 10f, bottomCrusher.transform.position.z);
         }
+    }
+
+    public Material getArmor1Material()
+    {
+        return armor1Material;
+    }
+
+    public Material getArmor2Material()
+    {
+        return armor2Material;
+    }
+
+    public GameObject getWalls()
+    {
+        return walls;
+    }
+
+    public GameObject getCrushers()
+    {
+        return crushers;
+    }
+
+    public DeathScreen getDeathScreen()
+    {
+        return deathScreen.GetComponent<DeathScreen>();
     }
 }
