@@ -29,7 +29,7 @@ public class Crusher : MonoBehaviour
             }
             //Going down
             else if (behavior.Equals("crushDown"))
-                rb.AddForce((endPos-transform.position)*30f);
+                rb.AddForce((endPos-transform.position)*2000f*Time.deltaTime);
             //Stop
             else if (behavior.Equals("crushUp") && (transform.position.y < startPos.y) != sign)
             {
@@ -40,7 +40,7 @@ public class Crusher : MonoBehaviour
             }
             //Going up
             else if (behavior.Equals("crushUp"))
-                rb.AddForce((startPos-transform.position)*30f);
+                rb.AddForce((startPos-transform.position)*2000f*Time.deltaTime);
         }
     }
 
