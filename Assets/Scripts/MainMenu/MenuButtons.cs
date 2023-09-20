@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject levelSelectMenu;
+    [SerializeField] private LocalData localData;
+    [SerializeField] private TextMeshProUGUI highestLevelText;
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        
+        int highestLvl = PlayerPrefs.GetInt("highest");
+        highestLevelText.text = "(Level " + highestLvl+")";
     }
-
     public void OnQuitPress()
     {
         Debug.Log("Quitting Game");
@@ -26,6 +24,7 @@ public class MenuButtons : MonoBehaviour
     public void OnPlayPress()
     {
         Debug.Log("Loading Game");
+        localData.SetLevel(PlayerPrefs.GetInt("highest"));
         SceneManager.LoadScene(1);
     }
 
@@ -36,6 +35,8 @@ public class MenuButtons : MonoBehaviour
 
     public void OnLevelSelectPress()
     {
+        this.gameObject.SetActive(false);
+        levelSelectMenu.SetActive(true);
         Debug.Log("Loading Level Select");
     }
 }

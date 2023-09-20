@@ -29,6 +29,7 @@ public class DeathScreen : MonoBehaviour
 
     public void OnMainMenuPress()
     {
+        Destroy(GameObject.Find("LocalTransfer"));
         SceneManager.LoadScene(0);
     }
 }

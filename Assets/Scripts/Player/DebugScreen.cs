@@ -7,13 +7,37 @@ public class DebugScreen : MonoBehaviour
 {
     [SerializeField] private Canvas debugScreen;
     [SerializeField] private TMP_InputField timeScaleInput;
+    [SerializeField] private GameObject pauseTimeButton;
+    [SerializeField] private GameObject goToButton;
+    private Levels levels;
 
     public void Awake()
     {
         debugScreen.enabled = false;
+        levels = GameObject.Find("CubeModules").GetComponent<Levels>();
         try
         {
             timeScaleInput.onEndEdit.AddListener((s) => { Time.timeScale = float.Parse(timeScaleInput.text); });
+            pauseTimeButton.GetComponentInChildren<Button>().onClick.AddListener(() =>
+            {
+                if (Time.timeScale == 0f)
+                    try
+                    { 
+                        timeScaleInput.onEndEdit.Invoke("");
+                    }
+                    catch (Exception e)
+                    {
+                        Time.timeScale = 1f;
+                    }
+                    
+                else
+                    Time.timeScale = 0f;
+            });
+            goToButton.GetComponentInChildren<TMP_InputField>().onEndEdit.AddListener((s) =>
+            {
+                
+                levels.setCurrentLevel(int.Parse(goToButton.GetComponentInChildren<TMP_InputField>().text) - 1);
+            });
         }
         catch (Exception e)
         {
@@ -31,17 +55,5 @@ public class DebugScreen : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             debugScreen.enabled = !debugScreen.enabled;
         }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if(Time.timeScale == 0f)
-                timeScaleInput.onEndEdit.Invoke("");
-            else
-                Time.timeScale = 0f;
-                
-        }
-            
     }
-
-    
 }

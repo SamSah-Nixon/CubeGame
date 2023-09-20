@@ -17,6 +17,8 @@ public class Levels : MonoBehaviour
     private List<GameObject> warningSigns = new List<GameObject>();
     public void Start()  {
         setStartAndEndSpotsCrusher();
+        currentLevel = GameObject.Find("LocalTransfer").GetComponent<LocalData>().GetLevel() - 1;
+        Debug.Log("HELP ME : "+Time.time);
     }
     Color GenerateRandomColor()
     {
@@ -59,6 +61,8 @@ public class Levels : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        if (PlayerPrefs.GetInt("highest") < currentLevel + 1)
+            PlayerPrefs.SetInt("highest", currentLevel + 1);
         UnLoadLevel();
         currentLevel++;
         CubeFlashAnim();
@@ -314,5 +318,15 @@ public class Levels : MonoBehaviour
     public DeathScreen getDeathScreen()
     {
         return deathScreen.GetComponent<DeathScreen>();
+    }
+
+    public int getCurrentLevel()
+    {
+        return currentLevel;
+    }
+
+    public void setCurrentLevel(int level)
+    {
+        currentLevel = level;
     }
 }

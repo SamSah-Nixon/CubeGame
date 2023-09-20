@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrushHitbox : MonoBehaviour
+public class Fire : MonoBehaviour
 {
     [SerializeField] private Levels levels;
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag != "Player" && levels.getCurrentLevel() != 5)
+        if (collision.transform.tag.Equals("Player"))
         {
             levels.Death("CRUSHED!");
         }
-              
     }
 }
