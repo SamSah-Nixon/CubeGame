@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuButtons : MonoBehaviour
 {
     [SerializeField] private GameObject levelSelectMenu;
+    [SerializeField] private GameObject optionsMenu;
     [SerializeField] private LocalData localData;
     [SerializeField] private TextMeshProUGUI highestLevelText;
 
@@ -31,6 +32,8 @@ public class MenuButtons : MonoBehaviour
     public void OnOptionsPress()
     {
         Debug.Log("Loading Options");
+        this.gameObject.SetActive(false);
+        optionsMenu.SetActive(true);
     }
 
     public void OnLevelSelectPress()
