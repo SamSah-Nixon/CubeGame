@@ -10,11 +10,14 @@ public class MenuButtons : MonoBehaviour
     [SerializeField] private GameObject optionsMenu;
     [SerializeField] private LocalData localData;
     [SerializeField] private TextMeshProUGUI highestLevelText;
+    [SerializeField] private TextMeshProUGUI bestTimeText;
 
     public void Start()
     {
-        int highestLvl = PlayerPrefs.GetInt("highest");
+        int highestLvl = PlayerPrefs.GetInt("highest", 1);
         highestLevelText.text = "(Level " + highestLvl+")";
+        string bestTime = PlayerPrefs.GetString("bestTime","Best Time: Not Completed");
+        bestTimeText.text = bestTime;
     }
     public void OnQuitPress()
     {
@@ -25,7 +28,7 @@ public class MenuButtons : MonoBehaviour
     public void OnPlayPress()
     {
         Debug.Log("Loading Game");
-        localData.SetLevel(PlayerPrefs.GetInt("highest"));
+        localData.SetLevel(PlayerPrefs.GetInt("highest",1));
         SceneManager.LoadScene(1);
     }
 

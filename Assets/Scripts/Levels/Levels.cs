@@ -19,9 +19,12 @@ public class Levels : MonoBehaviour
     [SerializeField] private GameObject warningSignPrefab;
     [SerializeField] private GameObject fire;
     [SerializeField] private Image winScreen;
+    private bool timedRun = false;
+    private float timeStart;
     private List<GameObject> warningSigns = new List<GameObject>();
     public void Start()
     {
+        timedRun = false;
         Time.timeScale = 1;
         setStartAndEndSpotsCrusher();
         try
@@ -140,6 +143,8 @@ public class Levels : MonoBehaviour
       switch (currentLevel)
         {
             case 1:
+                timedRun = true;
+                timeStart = Time.time;
                 GetComponent<Level1>().enabled = true;
                 break;
             case 2:
@@ -187,6 +192,8 @@ public class Levels : MonoBehaviour
             case 16:
                 Cursor.lockState = CursorLockMode.None;
                 winScreen.gameObject.SetActive(true);
+                if(timedRun)
+                    PlayerPrefs.SetString("bestTime","Best Time: "+(Time.time-timeStart));
                 break;
         }
     }
@@ -288,5 +295,10 @@ public class Levels : MonoBehaviour
     public void setCurrentLevel(int level)
     {
         currentLevel = level;
+    }
+
+    public bool getTimedRun()
+    {
+        return timedRun;
     }
 }
