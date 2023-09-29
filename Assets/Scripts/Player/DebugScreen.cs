@@ -60,6 +60,7 @@ public class DebugScreen : MonoBehaviour
 
     public void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -67,5 +68,6 @@ public class DebugScreen : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             debugScreen.enabled = !debugScreen.enabled;
         }
+        */
     }
 }

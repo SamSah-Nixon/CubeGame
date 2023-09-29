@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
@@ -33,6 +34,9 @@ public class Options : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
             Debug.Log("Delted Datas");
+            GameObject.Find("LocalTransfer").GetComponent<LocalData>().SetLevel(1);
+            //Reload Scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         });
     }
 }

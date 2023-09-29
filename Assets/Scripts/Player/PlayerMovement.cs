@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag.Equals("Fire"))
-            heat += 100f;
+            heat += 50f;
     }
 
     private void OnCollisionStay(Collision collision)

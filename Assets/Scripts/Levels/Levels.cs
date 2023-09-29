@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,7 +19,9 @@ public class Levels : MonoBehaviour
     [SerializeField] private GameObject crushers;
     [SerializeField] private GameObject warningSignPrefab;
     [SerializeField] private GameObject fire;
+    [SerializeField] private TextMeshProUGUI levelPanel;
     [SerializeField] private Image winScreen;
+    [SerializeField] private WinScreen winScreenScript;
     private bool timedRun = false;
     private float timeStart;
     private List<GameObject> warningSigns = new List<GameObject>();
@@ -78,6 +81,7 @@ public class Levels : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("highest") < currentLevel + 1)
             PlayerPrefs.SetInt("highest", currentLevel + 1);
+        levelPanel.text = "Level " + (currentLevel + 1);
         UnLoadLevel();
         currentLevel++;
         CubeFlashAnim();
@@ -192,8 +196,37 @@ public class Levels : MonoBehaviour
             case 16:
                 Cursor.lockState = CursorLockMode.None;
                 winScreen.gameObject.SetActive(true);
-                if(timedRun)
-                    PlayerPrefs.SetString("bestTime","Best Time: "+(Time.time-timeStart));
+               
+                if (timedRun)
+                {
+                    float bestTime;
+                    try
+                    {
+                        
+                        float.TryParse(PlayerPrefs.GetString("bestTime", "RunNoTimed999999999999999999").Substring(10), out bestTime);
+                        if (bestTime > (Time.time - timeStart))
+                        {
+                            winScreenScript.SetBestTime("Best Time "+(Time.time - timeStart));
+                            PlayerPrefs.SetString("bestTime", "Best Time: " + (Time.time - timeStart));
+                        }
+                        else
+                        {
+                            winScreenScript.SetBestTime(PlayerPrefs.GetString("bestTime", "No Best Time"));
+                        }
+                            
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log("No Best Time Found "+e);
+                    }
+                    winScreenScript.SetTime("Time: "+(Time.time - timeStart));
+                    
+                }
+                else
+                {
+                    winScreenScript.SetTime("Run Not Timed");
+                    winScreenScript.SetBestTime(PlayerPrefs.GetString("bestTime", "No Best Time"));
+                }
                 break;
         }
     }

@@ -18,11 +18,15 @@ public class PauseScreen : MonoBehaviour
         {
             if (pauseScreen.activeSelf)
             {
+                Cursor.lockState = prevlockMode;
+                
+            }
+            else
+            {
                 prevlockMode = Cursor.lockState;
                 Cursor.lockState = CursorLockMode.None;
             }
-            else
-                Cursor.lockState = prevlockMode;
+                
 
             pauseScreen.SetActive(!pauseScreen.activeSelf);
             
