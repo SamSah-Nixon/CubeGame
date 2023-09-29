@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
@@ -17,8 +18,11 @@ public class Levels : MonoBehaviour
     [SerializeField] private GameObject crushers;
     [SerializeField] private GameObject warningSignPrefab;
     [SerializeField] private GameObject fire;
+    [SerializeField] private Image winScreen;
     private List<GameObject> warningSigns = new List<GameObject>();
-    public void Start()  {
+    public void Start()
+    {
+        Time.timeScale = 1;
         setStartAndEndSpotsCrusher();
         try
         {
@@ -27,8 +31,6 @@ public class Levels : MonoBehaviour
         {
             Debug.Log("No Set Level Found "+e);
         }
-        
-        Debug.Log("HELP ME : "+Time.time);
     }
     Color GenerateRandomColor()
     {
@@ -128,36 +130,6 @@ public class Levels : MonoBehaviour
             case 15:
                 GetComponent<Level15>().enabled = false;
                 break;
-            case 16:
-                GetComponent<Level16>().enabled = false;
-                break;
-            case 17:
-                GetComponent<Level17>().enabled = false;
-                break;
-            case 18:
-                GetComponent<Level18>().enabled = false;
-                break;
-            case 19:
-                GetComponent<Level19>().enabled = false;
-                break;
-            case 20:
-                GetComponent<Level20>().enabled = false;
-                break;
-            case 21:
-                GetComponent<Level21>().enabled = false;
-                break;
-            case 22:
-                GetComponent<Level22>().enabled = false;
-                break;
-            case 23:
-                GetComponent<Level23>().enabled = false;
-                break;
-            case 24:
-                GetComponent<Level24>().enabled = false;
-                break;
-            case 25:
-                GetComponent<Level25>().enabled = false;
-                break;
         }
     }
     public void LoadLevel()
@@ -213,34 +185,8 @@ public class Levels : MonoBehaviour
                 GetComponent<Level15>().enabled = true;
                 break;
             case 16:
-                GetComponent<Level16>().enabled = true;
-                break;
-            case 17:
-                GetComponent<Level17>().enabled = true;
-                break;
-            case 18:
-                GetComponent<Level18>().enabled = true;
-                break;
-            case 19:
-                GetComponent<Level19>().enabled = true;
-                break;
-            case 20:
-                GetComponent<Level20>().enabled = true;
-                break;
-            case 21:
-                GetComponent<Level21>().enabled = true;
-                break;
-            case 22:
-                GetComponent<Level22>().enabled = true;
-                break;
-            case 23:
-                GetComponent<Level23>().enabled = true;
-                break;
-            case 24:
-                GetComponent<Level24>().enabled = true;
-                break;
-            case 25:
-                GetComponent<Level25>().enabled = true;
+                Cursor.lockState = CursorLockMode.None;
+                winScreen.gameObject.SetActive(true);
                 break;
         }
     }
