@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6984112320602078378}
   - component: {fileID: 7422780380598042784}
   - component: {fileID: 3731283771096308525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,9 +4840,9 @@ GameObject:
   - component: {fileID: 6610016148744735270}
   - component: {fileID: 2992727470374486783}
   - component: {fileID: 3888828440969584638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4944,9 +4944,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3411521486950210704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

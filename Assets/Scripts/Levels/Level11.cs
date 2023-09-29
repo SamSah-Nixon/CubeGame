@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,7 +7,7 @@ public class Level11 : MonoBehaviour
 {
     // Start is called before the first frame update
     private List<ModuleScript> modules = new List<ModuleScript>();
-    private float cooldown = 20f;
+    private float cooldown = 10f;
     private float lastActive = 0f;
     void Start()
     {
@@ -42,16 +43,19 @@ public class Level11 : MonoBehaviour
     {
         if (Time.time > lastActive + cooldown)
         {
+            Debug.Log("Fire!");
             lastActive = Time.time;
             Vector3 pos = GetComponent<Levels>().getCrushers().transform.GetChild(Random.Range(0, 2)).GetChild(Random.Range(0, 9)).transform.position;
             GetComponent<Levels>().WarningSign(pos.x, pos.z);
-            Invoke(nameof(FireShow),1.4f);
+            StartCoroutine(FireShow(pos.x,pos.z,1.4f));
         }
-        
     }
 
-    private void FireShow()
+    private IEnumerator FireShow(float x, float z, float waitTime)
     {
-        Instantiate(GetComponent<Levels>().fire, GetComponent<Levels>().getCrushers().transform.GetChild(Random.Range(0, 2)).GetChild(Random.Range(0, 9)).transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(waitTime);
+        GameObject fire = Instantiate(GetComponent<Levels>().getFire(), new Vector3(x,0.01f,z), Quaternion.identity);
+        yield return new WaitForSeconds(10f);
+        Destroy(fire);
     }
 }

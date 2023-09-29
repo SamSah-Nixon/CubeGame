@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 
 public class Levels : MonoBehaviour
@@ -14,10 +16,18 @@ public class Levels : MonoBehaviour
     [SerializeField] private GameObject walls;
     [SerializeField] private GameObject crushers;
     [SerializeField] private GameObject warningSignPrefab;
+    [SerializeField] private GameObject fire;
     private List<GameObject> warningSigns = new List<GameObject>();
     public void Start()  {
         setStartAndEndSpotsCrusher();
-        currentLevel = GameObject.Find("LocalTransfer").GetComponent<LocalData>().GetLevel() - 1;
+        try
+        {
+            currentLevel = GameObject.Find("LocalTransfer").GetComponent<LocalData>().GetLevel() - 1;
+        } catch (Exception e)
+        {
+            Debug.Log("No Set Level Found "+e);
+        }
+        
         Debug.Log("HELP ME : "+Time.time);
     }
     Color GenerateRandomColor()
@@ -323,6 +333,10 @@ public class Levels : MonoBehaviour
     public int getCurrentLevel()
     {
         return currentLevel;
+    }
+
+    public GameObject getFire(){
+        return fire;
     }
 
     public void setCurrentLevel(int level)

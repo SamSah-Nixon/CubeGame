@@ -1,5 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
@@ -25,8 +26,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask ground;
     bool grounded;
 
-    
+    [Header("Misc")]
     public Transform orientation;
+    [SerializeField] private Levels levels;
+    [SerializeField] private GameObject heatPanel;
+    private float heat;
+
 
     float horizontalInput;
     float verticalInput;
@@ -56,7 +61,16 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
 
         MyInput();
-        
+
+
+        heat -= (Time.deltaTime * 50f);
+        if(heat < 0)
+            heat = 0;
+        heatPanel.GetComponent<Image>().color = new Color(255,0,0,heat/255f);
+        if (heat > 255f)
+        {
+            levels.Death("BURNED");
+        }
     }
 
     private void FixedUpdate()
@@ -127,4 +141,15 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag.Equals("Fire"))
+            heat += 100f;
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.transform.tag.Equals("Fire"))
+            heat += 5f;
+    }
 }

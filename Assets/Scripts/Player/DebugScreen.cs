@@ -17,7 +17,18 @@ public class DebugScreen : MonoBehaviour
         levels = GameObject.Find("CubeModules").GetComponent<Levels>();
         try
         {
-            timeScaleInput.onEndEdit.AddListener((s) => { Time.timeScale = float.Parse(timeScaleInput.text); });
+            timeScaleInput.onEndEdit.AddListener((s) =>
+            {
+                try
+                { 
+                    Time.timeScale = float.Parse(timeScaleInput.text);
+                }
+                catch (Exception e)
+                {
+                    Debug.Log("Enter a number" + e);
+                }
+                
+            });
             pauseTimeButton.GetComponentInChildren<Button>().onClick.AddListener(() =>
             {
                 if (Time.timeScale == 0f)
@@ -27,6 +38,7 @@ public class DebugScreen : MonoBehaviour
                     }
                     catch (Exception e)
                     {
+                        Debug.Log("Enter a number" + e);
                         Time.timeScale = 1f;
                     }
                     
